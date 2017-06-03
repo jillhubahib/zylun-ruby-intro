@@ -11,6 +11,10 @@ theme: moon
 - Features
   * Garbage Collection
 - Implementations
+- API
+
+!SLIDE
+
 - Ruby Building Blocks
   * Control Flow
   * Loops
@@ -19,3 +23,6 @@ theme: moon
   * Hashes and Symbols
   * Blocks, Procs, and Lambdas
   * Object Oriented Programming
+
+## History
+
