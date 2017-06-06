@@ -1,0 +1,180 @@
+
+
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Introduction to Ruby - Zylun's Developer Meetup</title>
+
+		<meta name="description" content="Zylun's Developer Meetup">
+		<meta name="author"      content="Honey Jill Hubahib">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/moon.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/atom-one-dark.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Introduction to Ruby</h1>
+					<h3>Zylun's Developer Meetup</h3>
+					<p>
+						<small>by Honey Jill Hubahib</small>
+					</p>
+				</section>
+
+        
+        <section>
+          
+<!-- _S9SLIDE_  -->
+
+<pre><code class="hljs">
+Speaker.new({
+  name: "Jill Hubahib"
+  rubyist_since: "Late 2012",
+  works_as: "Ruby on Rails Developer",
+  code_at: "github.com/jillhubahib",
+  email: "jillhubahib@gmail.com",
+  slides: "jillhubahib.github.io/zylun-ruby-intro"
+})
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="goals">Goals</h2>
+
+<ul>
+  <li>History</li>
+  <li>Philosophy</li>
+  <li>Highlights and Features</li>
+  <li>Implementations</li>
+  <li>API</li>
+  <li>Installation
+    <ul>
+      <li>Versions</li>
+      <li>irb</li>
+    </ul>
+  </li>
+  <li>Building Blocks</li>
+  <li>Coding Exercises</li>
+</ul>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="history">History</h2>
+
+<ul>
+  <li>Yukihiro “Matz” Matsumoto, Japan, February 23, 1993</li>
+  <li>First public release v0.95 in 1995</li>
+  <li>English-language, v1.3 in 1999</li>
+  <li>First English language book “Programming Ruby”</li>
+</ul>
+
+<aside class="notes">
+Matz is a Mormon.
+<br /><br />
+Influenced by Perl, Matz wanted to use a jewel name for his new language, so he named Ruby after a colleague’s birthstone. Later, he realized that Ruby comes right after Perl in several situations. In birthstones, pearl is June, ruby is July. When measuring font sizes, pearl is 5pt, ruby is 5.5pt. He thought Ruby was a good name for a programming language newer (and hopefully better) than Perl.
+<br /><br />
+By 2000, Ruby was more popular than Python in Japan.
+<br /><br />
+Much of the growth is attributed to the popularity of software written in Ruby, particularly the Ruby on Rails web framework.
+</aside>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<p><img src="https://image.slidesharecdn.com/rochester-on-rails-introduction-to-ruby-1198772254216925-5/95/rochester-on-rails-introduction-to-ruby-4-728.jpg?cb=1198743460" alt="Ruby History" /></p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="philosophy">Philosophy</h2>
+
+<blockquote>
+  <p>I believe people want to express themselves when they program. They don’t want to fight with the language. Programming languages must feel natural to programmers. I tried to make people enjoy programming and concentrate on the fun and creative part of programming when they use Ruby. For me the purpose of life is partly to have joy. Programmers often feel joy when they can concentrate on the creative side of programming, So Ruby is designed to make programmers happy.</p>
+</blockquote>
+
+<aside class="notes">
+Focus on the programmer, not the computer.
+As Matz said, Ruby is not the fastest or even the powerful language, it's just good enough but people use it because its comfortable to use, its nice, its human centric design.
+<br /><br />
+In the design of the Ruby language the primary focus was on productivity and the joy of programming. As a result, Ruby was too slow, because it focused on run-time efficiency, so the team tried to do many things to make Ruby faster, like replacing the virtual machines and every versions have introduce a lot of speedups especially Matz promise on the next major version which he called Ruby3x3, three times faster than Ruby 2.0, which will be released by 2020. They'll gonna introduced JIT technique from Java, improve concurrency and parallelism using guilds.
+https://blog.heroku.com/ruby-3-by-3
+</aside>
+
+        </section>
+        
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
