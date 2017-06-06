@@ -15,7 +15,7 @@ There is an issue with current `liquid` gem with `slideshow` as reported [here](
 ## Build
 
 `
-$ slideshow build ruby-intro.md -t reveal.js --h2
+$ slideshow build index.md -t reveal.js --h2
 `
 
-Open `ruby-intro.html` in the browser.
+Open `index.html` in the browser.
