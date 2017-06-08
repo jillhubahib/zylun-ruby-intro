@@ -4,16 +4,20 @@ description: Zylun's Developer Meetup
 author: Honey Jill Hubahib
 theme: moon
 
-__SKIP__
+!SLIDE
+
+![Programmer's bestfriend](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/06/14352535061.png)
+
+<aside class="notes">
 Ruby has been described as an absolutely pure object-oriented scripting language and a genuine attempt to combine the best of everything in the scripting world. Ruby is a language of careful balance. Its creator, blended parts of his favorite languages (Perl, Smalltalk, Eiffel, Ada, and Lisp) to form a new language that balanced functional programming with imperative programming.
-__END__
+</aside>
 
 !SLIDE
 
 <pre><code class="hljs">
 Speaker.new({
   name: "Jill Hubahib"
-  rubyist_since: "Late 2012",
+  rubyist_since: "Early 2013",
   works_as: "Ruby on Rails Developer",
   code_at: "github.com/jillhubahib",
   email: "jillhubahib@gmail.com",
@@ -23,16 +27,36 @@ Speaker.new({
 
 ## Goals
 
+- Why Ruby
 - History
 - Philosophy
 - Highlights and Features
 - Implementations
-- API
 - Installation
-  * Versions
   * irb
+- API
 - Building Blocks
 - Coding Exercises
+
+## Why Ruby
+
+- Easy
+- Fun
+- Awesome Community
+
+<aside class="notes">
+Many Ruby developers find it fun to work with Ruby, and fun is a great motivator when learning to code. Ruby is a very high level language, which means Ruby abstracts away (i.e. handles for you) most of the complex details of the machine. Thus, you can quickly build something from scratch with less lines of code.
+<br/><br/>
+Ruby was made popular by the Ruby on Rails framework, a full-stack web framework that makes prototyping a breeze, making it a web framework of choice for many startups and coding beginners alike.
+<br/><br/>
+Ruby is not the universal solution for programmers' problems. There will always be times when you'll need a particular language: the environment may dictate it, you may have special libraries you need, performance concerns, or simply an issue with training.
+<br/><br/>
+There are plenty of introductions, tutorials, articles and essays of different sorts which aim to guide the novice and advise the guru on how to get the most out of Ruby.
+</aside>
+
+!SLIDE
+
+![Ruby Hug](https://brightonruby.com/images/2014/hone02.jpg)
 
 ## History
 
@@ -42,8 +66,6 @@ Speaker.new({
 - First English language book "Programming Ruby"
 
 <aside class="notes">
-Matz is a Mormon.
-<br/><br/>
 Influenced by Perl, Matz wanted to use a jewel name for his new language, so he named Ruby after a colleague’s birthstone. Later, he realized that Ruby comes right after Perl in several situations. In birthstones, pearl is June, ruby is July. When measuring font sizes, pearl is 5pt, ruby is 5.5pt. He thought Ruby was a good name for a programming language newer (and hopefully better) than Perl.
 <br/><br/>
 By 2000, Ruby was more popular than Python in Japan.
@@ -151,7 +173,6 @@ Classes can mixin a module and receive all its methods for free. For example, an
 - OS independent threading
 - Highly portable
 
-
 <aside class="notes">
 Ruby has exception handling features, like Java or Python, to make it easy to handle errors.
 <br/><br/>
@@ -170,16 +191,18 @@ It is developed mostly on GNU/Linux, but works on many types of UNIX, Mac OS X, 
 
 ## Implementations
 
-- MRI (“Matz’s Ruby Interpreter”) or CRuby (since it is written in C)
+- MRI (*M*atz’s *R*uby *I*nterpreter) or CRuby (since it is written in C)
 - [JRuby](http://jruby.org/) is Ruby atop the JVM
-- [Rubinius](http://rubini.us/) is ‘Ruby written in Ruby’
+- [Rubinius](http://rubini.us/) is Ruby written in Ruby
 - [MacRuby](http://www.macruby.org/) is a Ruby that’s tightly integrated with Apple’s Cocoa libraries for Mac OS X
 - [mruby](http://mruby.org/) is a lightweight implementation of Ruby
-- [IronRuby](http://www.ironruby.net/) is an implementation “tightly integrated with the .NET Framework”
+- [IronRuby](http://www.ironruby.net/) is an implementation tightly integrated with the .NET Framework
+- [MagLev](http://ruby.gemstone.com/) is a fast, stable, Ruby implementation with integrated object persistence and distributed shared cache.
+- [Cardinal](https://github.com/parrot/cardinal) is a Ruby compiler for Parrot Virtual Machine (Perl 6)
 
 
 <aside class="notes">
-Ruby, as a language, has a few different implementations. They are often useful in certain situations, provide extra integration to other languages or environments, or have special features that MRI doesn’t.
+Ruby, as a language, has a few different implementations. They are often useful in certain situations, provide extra integration to other languages or environments, or have special features that MRI doesn’t (e.g. operational goals and technical constraints.)
 <br/><br/>
 JRuby is a Ruby atop the JVM (Java Virtual Machine), utilizing the JVM’s optimizing JIT compilers, garbage collectors, concurrent threads, tool ecosystem, and vast collection of libraries.
 <br/><br/>
@@ -187,4 +210,48 @@ Rubinius is ‘Ruby written in Ruby’. Built on top of LLVM, Rubinius sports a 
 <br/><br/>
 mruby is a lightweight implementation of the Ruby language that can be linked and embedded within an application. Its development is led by Ruby’s creator Yukihiro “Matz” Matsumoto.
 <br/><br/>
+The real star in term of performance is Ruby+Truffle+Graal(experimental) JRuby backend being worked on by Oracle Labs. It implements Ruby with the Truffle AST framework and the Graal JIT VM. The claimed performance gains are already phenomenal – up to around 30x MRI in non-synthetic benchmarks. The results of this project could make us rethink what is possible with dynamic languages, and it may open Ruby to the worlds of scientific computing and artificial intelligence.
+https://www.sitepoint.com/projects-that-are-making-blazing-fast-ruby-a-reality/
 </aside>
+
+!SLIDE
+
+![rvm vs. rbenv](http://jonathan-jackson.net/images/rvm-rbenv-install.png)
+
+## RVM
+
+<pre><code class="hljs">
+$ rvm install 2.1.1
+$ rvm use 2.1.1
+$ ruby -v
+ruby 2.1.1p76 (2014-02-24 revision 45161) [x86_64-darwin12.0]
+$ which ruby
+/Users/rys/.rvm/rubies/ruby-2.1.1/bin/ruby
+</code></pre>
+
+## irb
+
+<aside class="notes">
+Show `ri`
+</aside>
+
+## API
+
+[https://ruby-doc.org](https://ruby-doc.org)
+
+- Core
+- Standard
+
+<aside class="notes">
+By default, Ruby always loads its core classes and modules when a script is executed. Core objects like Numbers(integers, floats), Strings, Arrays, Hashes, Files, Regular Expressions, Symbols, Threads, Times and dates, etc. Most likely, this is not going to be enough. That’s when the Standard Library comes into play: it’s a large collection of internal libraries that ships with every Ruby implementations. There are libraries to connect to the Internet, to read/write to various file formats such as CSV or YAML, to work with files and paths, access system features, and so on.
+Unlike core classes, standard libraries must be required specifically if needed, before they can be used.
+https://h3rald.com/ruby-compendium/book/core-stdlib.html#core-stdlib
+</aside>
+
+__SKIP__
+<aside class="notes">
+</aside>
+
+<pre><code class="hljs">
+</code></pre>
+__END__
