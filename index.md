@@ -4,16 +4,6 @@ description: Zylun's Developer Meetup
 author: Honey Jill Hubahib
 theme: moon
 
-!SLIDE
-
-![Programmer's bestfriend](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/06/14352535061.png)
-
-<aside class="notes">
-Ruby has been described as an absolutely pure object-oriented scripting language and a genuine attempt to combine the best of everything in the scripting world. Ruby is a language of careful balance. Its creator, blended parts of his favorite languages (Perl, Smalltalk, Eiffel, Ada, and Lisp) to form a new language that balanced functional programming with imperative programming.
-</aside>
-
-!SLIDE
-
 <pre><code class="hljs">
 Speaker.new({
   name: "Jill Hubahib"
@@ -25,24 +15,36 @@ Speaker.new({
 })
 </code></pre>
 
+!SLIDE
+
+![Programmer's bestfriend](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/06/14352535061.png)
+
+## Ruby.is_a?
+
+- Dynamic Interpreted Scripting Language
+- Strong OOP
+- High Level
+- Best of everything in the scripting world
+<pre><code class="hljs">
+Ruby = [Smalltalk - unfamiliar syntax]
+       + Perl's scripting power
+       + Python's exception etc.
+       + CLU's iterator
+       + a lot more good things
+</code></pre>
+
 ## Goals
 
-- Why Ruby
 - History
 - Philosophy
-- Highlights and Features
+- Features
+- Why Ruby
 - Implementations
 - Installation
   * irb
 - API
 - Building Blocks
 - Coding Exercises
-
-## Why Ruby
-
-- Easy
-- Fun
-- Awesome Community
 
 <aside class="notes">
 Many Ruby developers find it fun to work with Ruby, and fun is a great motivator when learning to code. Ruby is a very high level language, which means Ruby abstracts away (i.e. handles for you) most of the complex details of the machine. Thus, you can quickly build something from scratch with less lines of code.
@@ -53,10 +55,6 @@ Ruby is not the universal solution for programmers' problems. There will always 
 <br/><br/>
 There are plenty of introductions, tutorials, articles and essays of different sorts which aim to guide the novice and advise the guru on how to get the most out of Ruby.
 </aside>
-
-!SLIDE
-
-![Ruby Hug](https://brightonruby.com/images/2014/hone02.jpg)
 
 ## History
 
@@ -169,9 +167,9 @@ Classes can mixin a module and receive all its methods for free. For example, an
 - Exception handling
 - Garbage collection
 - Easy to extend
-- Load extension libraries dynamically if an OS allows
-- OS independent threading
-- Highly portable
+- Thread
+- Cross platform
+- Introspection, reflection and Meta programming
 
 <aside class="notes">
 Ruby has exception handling features, like Java or Python, to make it easy to handle errors.
@@ -184,6 +182,16 @@ Ruby features OS independent threading. Thus, for all platforms on which Ruby ru
 <br/><br/>
 It is developed mostly on GNU/Linux, but works on many types of UNIX, Mac OS X, Windows, DOS, BeOS, OS/2, etc.
 </aside>
+
+## Why Ruby
+
+- Easy and Fun
+- Productive
+- Awesome Community
+
+!SLIDE
+
+![Ruby Hug](https://brightonruby.com/images/2014/hone02.jpg)
 
 !SLIDE
 
