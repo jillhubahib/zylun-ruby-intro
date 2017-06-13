@@ -6,9 +6,9 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Introduction to Ruby - Zylun's Developer Meetup</title>
+		<title>Introduction to Ruby - CoDev's Developer Meetup</title>
 
-		<meta name="description" content="Zylun's Developer Meetup">
+		<meta name="description" content="CoDev's Developer Meetup">
 		<meta name="author"      content="Honey Jill Hubahib">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
@@ -44,7 +44,7 @@
 			<div class="slides">
 				<section>
 					<h1>Introduction to Ruby</h1>
-					<h3>Zylun's Developer Meetup</h3>
+					<h3>CoDev's Developer Meetup</h3>
 					<p>
 						<small>by Honey Jill Hubahib</small>
 					</p>
@@ -156,7 +156,37 @@ Much of the growth is attributed to the popularity of software written in Ruby, 
         <section>
           <!-- _S9SLIDE_  -->
 
+<p><img src="https://heroku-blog-files.s3.amazonaws.com/posts/1473343689-matz.png" alt="Matz joins Heroku" /></p>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
 <p><img src="https://image.slidesharecdn.com/rochester-on-rails-introduction-to-ruby-1198772254216925-5/95/rochester-on-rails-introduction-to-ruby-4-728.jpg?cb=1198743460" alt="Ruby History" /></p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="versions">Versions</h2>
+
+<ul>
+  <li>0.95</li>
+  <li>1.8</li>
+  <li>1.9</li>
+  <li>2.0
+    <ul>
+      <li>2.1</li>
+      <li>2.2</li>
+    </ul>
+  </li>
+  <li>2.3</li>
+  <li>2.4</li>
+</ul>
 
 
 
@@ -249,6 +279,39 @@ foo(1)    # =&gt; 2
 foo('a')  # =&gt; "aa"
 </code></pre>
 
+<aside class="notes">
+Dynamic type checking is the process of verifying the type safety of a program at runtime.
+</aside>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<table>
+  <thead>
+    <tr>
+      <th>Dynamically Typed</th>
+      <th style="text-align: center">Statically Typed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Types are bound at <strong>execution time</strong></td>
+      <td style="text-align: center">Types are bound at <strong>compile time</strong></td>
+    </tr>
+    <tr>
+      <td>Flexibility ↑</td>
+      <td style="text-align: center">Flexibility ↓</td>
+    </tr>
+    <tr>
+      <td>Execution Safety ↓</td>
+      <td style="text-align: center">Execution Safety ↑</td>
+    </tr>
+  </tbody>
+</table>
+
 
 
         </section>
@@ -257,10 +320,25 @@ foo('a')  # =&gt; "aa"
           <!-- _S9SLIDE_ -->
 <h2 id="duck-typing">Duck Typing</h2>
 
+<p><img src="https://userscontent2.emaze.com/images/ccbc2b01-3a6a-41b3-87c4-7d08794d3902/15a45dd5799004cf3f3fd4c5834339d0.jpeg" alt="Quack Quack" /></p>
+
+<aside class="notes">
+In Ruby, we rely less on the type (or class) of an object and more on its capabilities. Hence, Duck Typing means an object type is defined by what it can do, not by what it is. Duck Typing refers to the tendency of Ruby to be less concerned with the class of an object and more concerned with what methods can be called on it and what operations can be performed on it. In Ruby, we would use respond_to? or might simply pass an object to a method and know that an exception will be raised if it is used inappropriately.
+</aside>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
 <pre><code class="hljs">
-"a".respond_to? :size  # =&gt; true
-1.respond_to? :+       # =&gt; true
-1.respond_to? :inject  # =&gt; false
+&gt;&gt; 'A string'.respond_to?(:to_str)
+=&gt; true
+&gt;&gt; Exception.new.respond_to?(:to_str)
+=&gt; false
+&gt;&gt; 4.respond_to?(:to_str)
+=&gt; false
 </code></pre>
 
 
@@ -310,6 +388,8 @@ Writing C extensions in Ruby is easier than in Perl or Python, with a very elega
 Ruby features OS independent threading. Thus, for all platforms on which Ruby runs, you also have multithreading, regardless of if the OS supports it or not, even on MS-DOS!
 <br /><br />
 It is developed mostly on GNU/Linux, but works on many types of UNIX, Mac OS X, Windows, DOS, BeOS, OS/2, etc.
+<br /><br />
+Reflection is the ability of a computer program to examine, introspect, and modify its own structure and behavior at runtime.
 </aside>
 
 
@@ -326,13 +406,17 @@ It is developed mostly on GNU/Linux, but works on many types of UNIX, Mac OS X, 
   <li>Awesome Community</li>
 </ul>
 
+<aside class="notes">
+Programmers use the term syntactic sugar to refer to special rules that let you write your code in a way that doesn't correspond to the normal rules but that is easier to remember how to do and looks better.
+</aside>
+
 
         </section>
         
         <section>
           <!-- _S9SLIDE_  -->
 
-<p><img src="https://brightonruby.com/images/2014/hone02.jpg" alt="Ruby Hug" /></p>
+<p><img src="https://yuneoh.com/wp-content/uploads/2017/01/LTK-701-044-RubyConf-Bohol-2017_1200x6308.jpg" alt="Ruby Hug" /></p>
 
 
         </section>
@@ -351,14 +435,14 @@ It is developed mostly on GNU/Linux, but works on many types of UNIX, Mac OS X, 
 <h2 id="implementations">Implementations</h2>
 
 <ul>
-  <li>MRI (<em>M</em>atz’s <em>R</em>uby <em>I</em>nterpreter) or CRuby (since it is written in C)</li>
-  <li><a href="http://jruby.org/">JRuby</a> is Ruby atop the JVM</li>
-  <li><a href="http://rubini.us/">Rubinius</a> is Ruby written in Ruby</li>
-  <li><a href="http://www.macruby.org/">MacRuby</a> is a Ruby that’s tightly integrated with Apple’s Cocoa libraries for Mac OS X</li>
-  <li><a href="http://mruby.org/">mruby</a> is a lightweight implementation of Ruby</li>
-  <li><a href="http://www.ironruby.net/">IronRuby</a> is an implementation tightly integrated with the .NET Framework</li>
-  <li><a href="http://ruby.gemstone.com/">MagLev</a> is a fast, stable, Ruby implementation with integrated object persistence and distributed shared cache.</li>
-  <li><a href="https://github.com/parrot/cardinal">Cardinal</a> is a Ruby compiler for Parrot Virtual Machine (Perl 6)</li>
+  <li>MRI (<strong>M</strong>atz’s <strong>R</strong>uby <strong>I</strong>nterpreter) or CRuby</li>
+  <li><a href="http://jruby.org/">JRuby</a></li>
+  <li><a href="http://rubini.us/">Rubinius</a></li>
+  <li><a href="http://www.macruby.org/">MacRuby</a></li>
+  <li><a href="http://mruby.org/">mruby</a></li>
+  <li><a href="http://www.ironruby.net/">IronRuby</a></li>
+  <li><a href="http://ruby.gemstone.com/">MagLev</a></li>
+  <li><a href="https://github.com/parrot/cardinal">Cardinal</a></li>
 </ul>
 
 <aside class="notes">
@@ -431,6 +515,347 @@ By default, Ruby always loads its core classes and modules when a script is exec
 Unlike core classes, standard libraries must be required specifically if needed, before they can be used.
 https://h3rald.com/ruby-compendium/book/core-stdlib.html#core-stdlib
 </aside>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="rubygems">Rubygems</h2>
+
+<p><a href="https://rubygems.org/">https://rubygems.org/</a></p>
+
+<p><img src="https://i2.wp.com/www.nextofwindows.com/wp-content/uploads/2015/01/2015-01-26_1724.png" alt="Rubygems" /></p>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="strings-and-variables">Strings and Variables</h2>
+
+<pre><code class="hljs">
+'Hello, CoDev!'
+
+name = 'CoDev'     # =&gt; "CoDev"
+"Hello, #{name}!"  # =&gt; "Hello, CoDev!"
+</code></pre>
+
+<aside class="notes">
+Credits to https://www.slideshare.net/Narnach/an-introduction-to-ruby-2449085
+</aside>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="methods">Methods</h2>
+
+<pre><code class="hljs">
+str = 'Hello, CoDev!'
+str.size                        # =&gt; 17
+str.sub('CoDev', 'World')       # =&gt; "Hello, World!"
+
+def greet(name='Jill')
+  "Greetings, #{name}!"
+end
+
+puts greet                      # =&gt; Greetings, Jill!
+puts greet('CoDev')             # =&gt; Greetings, CoDev!
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="numbers">Numbers</h2>
+
+<pre><code class="hljs">
+1 + 2          # =&gt; 3
+1 + 2.1        # =&gt; 3.1
+2**10          # =&gt; 1024
+9 / 2          # =&gt; 4
+5 % 3          # =&gt; 2
+-3.abs         # =&gt; 3
+1.class        # =&gt; Fixnum
+(2**50).class  # =&gt; Bignum
+1.3.class      # =&gt; Float
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="arrays">Arrays</h2>
+
+<pre><code class="hljs">
+Array.new                # =&gt; []
+[1,2,3]                  # =&gt; [1, 2, 3]
+[1] + [2] &lt;&lt; 3           # =&gt; [1, 2, 3]
+[1,2,3] - [2,3]          # =&gt; [1]
+␠%w[one two]             # =&gt; ["one", "two"]
+[1,2,3].pop              # =&gt; 3
+[1,2].push(3)            # =&gt; [1, 2, 3]
+[1,2,3].shift            # =&gt; 1
+[2,3].unshift(1)         # =&gt; [1, 2, 3]
+[1,3].insert(1,2)        # =&gt; [1, 2, 3]
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="hashes">Hashes</h2>
+
+<pre><code class="hljs">
+options = {name: 'CoDev'}
+h = Hash.new         # =&gt; {}
+h['string'] = 1
+h[:symbol]  = 1
+h                    # =&gt; {:symbol =&gt; 1, "string" =&gt; 1}
+h.keys               # =&gt; [:symbol, "string"]
+h[:symbol]           # =&gt; 1
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="iterators">Iterators</h2>
+
+<pre><code class="hljs">
+for n in 0..2
+  puts n
+end
+
+(0..2).each do |n|
+  puts n
+end
+
+[0,1,2].each {|n| puts n}
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="enumerable">Enumerable</h2>
+
+<pre><code class="hljs">
+ary = [1,2,3]
+ary.map {|n| n * 2}              # =&gt; [2, 4, 6]
+ary.select {|n| n % 2 == 0}      # =&gt; [2]
+ary.inject(0) {|sum, n| sum + n} # =&gt; 6
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="control-structures">Control Structures</h2>
+
+<pre><code class="hljs">
+if some_condition
+  # ...
+elsif other_condition
+  # ...
+else
+  # ...
+end
+
+while condition
+  # ...
+end
+
+puts 'lol' if funny?
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="regular-expressions">Regular Expressions</h2>
+
+<pre><code class="hljs">
+str = 'Hello, world!'
+str.gsub(/[aeiou]/, '*')      # =&gt; "H*ll*, w*rld!"
+str =~ /w(or)ld/              # =&gt; 7
+$1                            # =&gt; 'or'
+match = str.match(/w(or)ld/)  # =&gt; #&lt;MatchData "world" 1:"or"&gt;
+match[0]                      # =&gt; "world"
+match[1]                      # =&gt; "or"
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="error-handling">Error Handling</h2>
+
+<pre><code class="hljs">
+begin
+  raise 'Standard error'
+rescue =&gt; e
+  p e
+end
+
+begin
+  raise StandardError.new('Oh, oh')
+rescue RuntimeError
+  puts 'runtime'
+rescue StandardError
+  puts 'standard'
+end
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="system-interaction">System Interaction</h2>
+
+<pre><code class="hljs">
+system 'ls'
+output = `ls`
+
+ARGV
+
+File.open('test.txt', 'w') do |file|
+  file.write("line\n")
+  file.puts("line")
+end
+
+File.read('test.txt')
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="classes">Classes</h2>
+
+<pre><code class="hljs">
+class Calc
+  attr_accessor :factor
+
+  def initialize(factor=2)
+    @factor = factor
+  end
+
+  def multiply(value)
+    @factor * value
+  end
+end
+
+calc = Calc.new
+calc.multiply 5  # =&gt; 10
+calc.factor = 3
+calc.multiply 5  # =&gt; 15
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="inheritance">Inheritance</h2>
+
+<pre><code class="hljs">
+class Foo
+  def greet
+    "Hi, #{value}"
+  end
+  def value
+    "foo"
+  end
+end
+class Bar &lt; Foo
+  def value
+    "bar"
+  end
+end
+Foo.new.greet # =&gt; "Hi, foo"
+Bar.new.greet # =&gt; "Hi, bar"
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="mixins--open-classes">Mixins &amp; Open Classes</h2>
+
+<pre><code class="hljs">
+  module Even
+    def even?
+      self % 2 == 0
+    end
+  end
+
+  class Fixnum
+    include Even
+  end
+
+  1.even? # =&gt; false
+  2.even? # =&gt; true
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="class-methods">Class methods</h2>
+
+<pre><code class="hljs">
+class Foo
+  def self.bar
+    "BAR!"
+  end
+
+  def bar
+    "bar"
+  end
+end
+
+Foo.bar      # =&gt; "BAR!"
+Foo.new.bar  # =&gt; "bar"
+</code></pre>
+
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_ -->
+<h2 id="exercises">EXERCISES</h2>
 
 
         </section>
