@@ -105,6 +105,10 @@ Ruby = [Smalltalk - unfamiliar syntax]
 <aside class="notes">
 Ruby is a very high level language, which means Ruby abstracts away (i.e. handles for you) most of the complex details of the machine. Thus, you can quickly build something from scratch with less lines of code.
 <br /><br />
+Dynamic type checking is the process of verifying the type safety of a program at runtime.
+<br /><br />
+Reflection is the ability of a computer program to examine, introspect, and modify its own structure and behavior at runtime.
+<br /><br />
 CLU is a pioneering programming language created at the Massachusetts Institute of Technology (MIT) by Barbara Liskov and her students between 1974 and 1975. While it did not find extensive use, it introduced many features that are used widely now, and is seen as a step in the development of object-oriented programming (OOP).
 </aside>
 
@@ -513,15 +517,14 @@ Ruby has exception handling features, like Java or Python, to make it easy to ha
 Why talk about GC? Run code faster. Chance to look at some of the more interesting algorithms in CS
 Garbage collectors do much more than just collect garbage. Three things: Allocate memory, identify which objects are garbage, reclaim the memory from the identified garbage.
 Body metaphor: We usually write business logic - the brain. GC is the beating heart: Provides memory, new objects, blood and nutrients. If your heart stops beating, you die. If your GC slows down (high blood pressure, clogged arteries), you suffer.
-Ruby features a true mark-and-sweep garbage collector for all Ruby objects. No need to maintain reference counts in extension libraries. As Matz says, “This is better for your health.”
+Ruby features a true mark-and-sweep garbage collector for all Ruby objects. No need to maintain reference counts in extension libraries. As Matz says, “This is better for your health.” <br />
+As compare to python: http://patshaughnessy.net/2013/10/24/visualizing-garbage-collection-in-ruby-and-python
 <br /><br />
 Writing C extensions in Ruby is easier than in Perl or Python, with a very elegant API for calling Ruby from C. This includes calls for embedding Ruby in software, for use as a scripting language. A SWIG interface is also available.
 <br /><br />
 Ruby features OS independent threading. Thus, for all platforms on which Ruby runs, you also have multithreading, regardless of if the OS supports it or not, even on MS-DOS!
 <br /><br />
 It is developed mostly on GNU/Linux, but works on many types of UNIX, Mac OS X, Windows, DOS, BeOS, OS/2, etc.
-<br /><br />
-Reflection is the ability of a computer program to examine, introspect, and modify its own structure and behavior at runtime.
 </aside>
 
 
@@ -597,6 +600,14 @@ mruby is a lightweight implementation of the Ruby language that can be linked an
 The real star in term of performance is Ruby+Truffle+Graal(experimental) JRuby backend being worked on by Oracle Labs. It implements Ruby with the Truffle AST framework and the Graal JIT VM. The claimed performance gains are already phenomenal - up to around 30x MRI in non-synthetic benchmarks. The results of this project could make us rethink what is possible with dynamic languages, and it may open Ruby to the worlds of scientific computing and artificial intelligence.
 https://www.sitepoint.com/projects-that-are-making-blazing-fast-ruby-a-reality/
 </aside>
+
+
+        </section>
+        
+        <section>
+          <!-- _S9SLIDE_  -->
+
+<p><img src="https://pragtob.files.wordpress.com/2017/01/rubykon_2_speedup1.png" alt="Ruby speedup" /></p>
 
 
         </section>

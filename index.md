@@ -45,6 +45,10 @@ Ruby = [Smalltalk - unfamiliar syntax]
 <aside class="notes">
 Ruby is a very high level language, which means Ruby abstracts away (i.e. handles for you) most of the complex details of the machine. Thus, you can quickly build something from scratch with less lines of code.
 <br/><br/>
+Dynamic type checking is the process of verifying the type safety of a program at runtime.
+<br/><br/>
+Reflection is the ability of a computer program to examine, introspect, and modify its own structure and behavior at runtime.
+<br/><br/>
 CLU is a pioneering programming language created at the Massachusetts Institute of Technology (MIT) by Barbara Liskov and her students between 1974 and 1975. While it did not find extensive use, it introduced many features that are used widely now, and is seen as a step in the development of object-oriented programming (OOP).
 </aside>
 
@@ -360,8 +364,6 @@ Writing C extensions in Ruby is easier than in Perl or Python, with a very elega
 Ruby features OS independent threading. Thus, for all platforms on which Ruby runs, you also have multithreading, regardless of if the OS supports it or not, even on MS-DOS!
 <br/><br/>
 It is developed mostly on GNU/Linux, but works on many types of UNIX, Mac OS X, Windows, DOS, BeOS, OS/2, etc.
-<br/><br/>
-Reflection is the ability of a computer program to examine, introspect, and modify its own structure and behavior at runtime.
 </aside>
 
 ## Why Ruby
